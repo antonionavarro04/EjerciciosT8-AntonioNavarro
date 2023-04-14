@@ -74,6 +74,15 @@ public class Producto {
     }
 
     /**
+     * Calcula el precio de varios productos
+     * @param cantidad Cantidad de productos
+     * @return Precio total
+     */
+    public float calcularPrecio(int cantidad) {
+        return precio * cantidad;
+    }
+
+    /**
      * Devuelve la información de un producto
      * @return Cadena creada y montada
      */

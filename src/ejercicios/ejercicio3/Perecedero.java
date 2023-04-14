@@ -51,30 +51,31 @@ public class Perecedero extends Producto {
     }
 
     /**
-     * @return Devuelve el precio del producto, se ve afectado según los dias que queden para que caduque
+     * Calcula el precio del producto perecedero, conforme menos dias para caducar, mas caro
+     * @param cantidad Cantidad de productos
+     * @return Precio del producto perecedero
      */
-    @ Override
-    public float getPrecio() {
-        float precioActual = super.getPrecio();
-        float precioFinal;
+    @Override
+    public float calcularPrecio(int cantidad) {
+        byte n;
 
         switch (diasParaCaducar) {
             case 3:
-                precioFinal = precioActual / 2.0f;
+                n = 2;
                 break;
 
             case 2:
-                precioFinal = precioActual / 3.0f;
+                n = 3;
                 break;
 
             case 1:
-                precioFinal = precioActual / 4.0f;
+                n = 4;
                 break;
         
             default:
-                precioFinal = precioActual;
+                n = 1;
                 break;
-        } return precioFinal;
+        } return super.getPrecio() * cantidad / n;
     }
     
     /**
@@ -83,29 +84,8 @@ public class Perecedero extends Producto {
      */
     @ Override
     public String toString() {
-        float precioActual = super.getPrecio();
-        float precioFinal;
-
-        switch (diasParaCaducar) {
-            case 3:
-                precioFinal = precioActual / 2.0f;
-                break;
-
-            case 2:
-                precioFinal = precioActual / 3.0f;
-                break;
-
-            case 1:
-                precioFinal = precioActual / 4.0f;
-                break;
-        
-            default:
-                precioFinal = precioActual;
-                break;
-        }
-
         return "Nombre: \"" + super.getNombre() + "\"" +
-        "\nPrecio: " + precioFinal + "€" +
+        "\nPrecio: " + super.getPrecio() + "€" +
         "\nDias para Caducar: " + diasParaCaducar;
     }
 }
