@@ -24,27 +24,48 @@ public class Main {
             // ^ Definimos una variable precioActual con el precio del electrodoméstico actual
             float precioActual = aparatos[pos].precioFinal();
 
+            // ^ Extraemos el nombre simplificado de la Clase
+            String nombreClase = aparatos[pos].getClass().getSimpleName();
+
             // ! Imprimimos el precio base y final
-            System.out.printf("Tipo de Producto: %s\n", aparatos[pos].getClass().getSimpleName());
+            System.out.printf("Tipo de Producto: %s\n", nombreClase);
             System.out.printf("El precio base es: %s\n", aparatos[pos].getPrecioBase());
             System.out.printf("El precio final es: %s\n", precioActual);
 
-            if (aparatos[pos] instanceof Television) { // ? Si el objeto es de tipo Televisión
-                precioTelevisores += precioActual;
+            /* if (aparatos[pos] instanceof Television) { // ? Si el objeto es de tipo Televisión
+                precioTelevisores += precioActual; 
             } else if (aparatos[pos] instanceof Lavadora) { // ? Si el objeto es de tipo Lavadora
                 precioLavadoras += precioActual;
-            } else if (aparatos[pos] instanceof Electrodomestico) { // ? Si el objeto es de tipo Electrodoméstico
+            } else if (aparatos[pos] instanceof Electrodomestico) { // ? Si el objeto es de tipo Electrodoméstico, debe ir el ultimo porque la clase Electrodoméstico es la clase padre de las otras dos
                 precioElectrodomesticos += precioActual;
+            } */
+
+            switch (nombreClase) { // ? Según el nombre de la clase meteremos el precio en una variable o otra
+                case "Electrodomestico":
+                    precioElectrodomesticos += precioActual;
+                    break;
+                
+                case "Television":
+                    precioTelevisores += precioActual;
+                    break;
+
+                case "Lavadora":
+                    precioLavadoras += precioActual;
+                    break;
+
+                default:
+                    System.err.printf("Clase \"%s\" inválida\n", nombreClase);
+                    break;
+            }
+
+            try { // ? Probamos a dormir el Hilo principal
+                Thread.sleep(1000);
+            } catch (Exception e) { // ? En caso de que se produzca alguna excepción la imprimimos
+                e.printStackTrace();
             }
             
             // ? Salto de Línea Triple
             System.out.println("\n-------------------------------\n");
-
-            try {
-                Thread.sleep(1000);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
         }
 
         // ! Imprimimos los precios totales
