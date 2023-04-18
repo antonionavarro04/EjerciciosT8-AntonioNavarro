@@ -151,6 +151,11 @@ public class Electrodomestico {
         } return state;
     }
 
+    /**
+     * Compruba que el color sea correcto
+     * @param color color del electrodoméstico
+     * @return true si es correcto, false si no lo es
+     */
     private boolean comprobarColor(String color) {
         boolean state = false;
 
