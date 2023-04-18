@@ -68,13 +68,9 @@ public class Electrodomestico {
             this.color = Colores.valueOf(color); // ! Pasamos el String a enum
         }
 
-        // ! Pasamos la letra a String mayuscula de solo el primer caracter
-        consumoEnergetico = String.valueOf(consumoEnergetico.charAt(0));
-        consumoEnergetico = consumoEnergetico.toUpperCase();
-
         // ! Comprobamos que la letra es correcta
         if (comprobarConsumoEnergetico(consumoEnergetico.charAt(0))) {
-            this.consumoEnergetico = ConsumosEnergeticos.valueOf(consumoEnergetico);    
+            this.consumoEnergetico = ConsumosEnergeticos.valueOf(consumoEnergetico.toUpperCase());    
         }
     }
 
