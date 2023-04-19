@@ -38,7 +38,7 @@ public class Electrodomestico {
     /**
      * Consumo energético del electrodoméstico, es de tipo enum
      */
-    protected ConsumosEnergeticos consumoEnergetico = ConsumosEnergeticos.F;;
+    protected ConsumosEnergeticos consumoEnergetico = ConsumosEnergeticos.F;
 
     /**
      * Constructor por defecto
@@ -132,6 +132,7 @@ public class Electrodomestico {
      */
     public void setConsumoEnergetico(String consumoEnergetico) {
         this.consumoEnergetico = ConsumosEnergeticos.valueOf(consumoEnergetico.toUpperCase());
+        
     }
 
     /**
@@ -140,10 +141,19 @@ public class Electrodomestico {
      * @return true si es correcta, false si no lo es
      */
     private boolean comprobarConsumoEnergetico(char c) {
-        boolean state = false;
-
-        if (c >= 'A' && c <= 'F') {
-            state = true;
+        boolean state = false, notExists = false;
+        int i = 0;
+        
+        while (!state && !notExists) {
+            try {
+                if (ConsumosEnergeticos.valueOf(String.valueOf(c)) == ConsumosEnergeticos.values()[i]) {
+                    state = true;
+                }
+            } catch (Exception e) {
+                notExists = true;
+            } finally {
+                i++;
+            }
         } return state;
     }
 
@@ -214,5 +224,17 @@ public class Electrodomestico {
 
         // ! Devolvemos el precio base + el incremento
         return precioBase + incremento;
+    }
+
+    public static void main(String[] args) {
+        Electrodomestico e = new Electrodomestico();
+
+        System.out.println(e.comprobarConsumoEnergetico('A'));
+        System.out.println(e.comprobarConsumoEnergetico('B'));
+        System.out.println(e.comprobarConsumoEnergetico('C'));
+        System.out.println(e.comprobarConsumoEnergetico('D'));
+        System.out.println(e.comprobarConsumoEnergetico('E'));
+        System.out.println(e.comprobarConsumoEnergetico('F'));
+        System.out.println(e.comprobarConsumoEnergetico('G'));
     }
 }
