@@ -225,16 +225,4 @@ public class Electrodomestico {
         // ! Devolvemos el precio base + el incremento
         return precioBase + incremento;
     }
-
-    public static void main(String[] args) {
-        Electrodomestico e = new Electrodomestico();
-
-        System.out.println(e.comprobarConsumoEnergetico('A'));
-        System.out.println(e.comprobarConsumoEnergetico('B'));
-        System.out.println(e.comprobarConsumoEnergetico('C'));
-        System.out.println(e.comprobarConsumoEnergetico('D'));
-        System.out.println(e.comprobarConsumoEnergetico('E'));
-        System.out.println(e.comprobarConsumoEnergetico('F'));
-        System.out.println(e.comprobarConsumoEnergetico('G'));
-    }
 }
