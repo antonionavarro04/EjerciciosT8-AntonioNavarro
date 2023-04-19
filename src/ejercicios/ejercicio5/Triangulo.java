@@ -95,9 +95,9 @@ public class Triangulo extends Poligono {
      * @return Area del Triágnulo
      */
     public double area() {
-        final double SEMIPERIMETRO = (lado1 + lado2 + lado3) / 2.0d;
+        final double SEMIPERIMETRO = (this.lado1 + this.lado2 + this.lado3) / 2.0d;
 
-        return Math.sqrt(SEMIPERIMETRO * (SEMIPERIMETRO - lado1) * (SEMIPERIMETRO - lado2) * (SEMIPERIMETRO - lado3));
+        return Math.sqrt(SEMIPERIMETRO * (SEMIPERIMETRO - this.lado1) * (SEMIPERIMETRO - this.lado2) * (SEMIPERIMETRO - this.lado3));
     }
     
     /**
@@ -107,11 +107,12 @@ public class Triangulo extends Poligono {
     @ Override
     public String toString() {
         return
-        "Tipo: " + getClass().getSimpleName()
+        "Tipo: " + "\"" + getClass().getSimpleName() + "\""
         + "\n" + super.toString()
         + "\n" + "Lado 1: " + lado1 + 'm'
         + "\n" + "Lado 2: " + lado2 + 'm'
         + "\n" + "Lado 3: " + lado3 + 'm'
+        + "\n" + "Area: " + this.area() + "m²"
         ;
     }
 }

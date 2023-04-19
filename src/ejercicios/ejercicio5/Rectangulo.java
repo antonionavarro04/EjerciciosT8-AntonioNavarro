@@ -85,6 +85,7 @@ public class Rectangulo extends Poligono {
         + "\n" + super.toString()
         + "\n" + "Anchura: " + this.lado1 + 'm'
         + "\n" + "Altura: " + this.lado2 + 'm'
+        + "\n" + "Area: " + this.area() + "m²"
         ;
     }
 }
