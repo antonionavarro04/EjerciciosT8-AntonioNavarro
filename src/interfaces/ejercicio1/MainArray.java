@@ -1,21 +1,27 @@
 package interfaces.ejercicio1;
 
+import java.util.Arrays;
+
 // ? Imports
 import funciones.Mathematics;
 import funciones.PerArrays;
 
 public class MainArray {
     // ? Se basa en el Bubble Sort
-    private static void sortArray(Socio[] socios) {
-        for (int i = 0; i < socios.length; i++) {
-            for (int j = 0; j < socios.length - 1; j++) {
-                if (socios[j].compareTo(socios[j + 1]) > 0) {
-                    Socio aux = socios[j];
-                    socios[j] = socios[j + 1];
-                    socios[j + 1] = aux;
+    private static Socio[] sortArray(Socio[] a) {
+        // ^ Hacemos una copia del array
+        Socio[] b = Arrays.copyOf(a, a.length);
+
+        // ? Ordenamos b
+        for (int i = 0; i < b.length; i++) {
+            for (int j = 0; j < b.length - 1; j++) {
+                if (b[j].compareTo(b[j + 1]) > 0) {
+                    Socio aux = b[j];
+                    b[j] = b[j + 1];
+                    b[j + 1] = aux;
                 }
             }
-        }
+        } return b;
     }
 
     public static void main(String[] args) {
@@ -32,7 +38,7 @@ public class MainArray {
         System.out.println(PerArrays.printArray(socios));
 
         // ! Ordenamos el Contenido del Array usando el metodo compareTo() de la clase Socio
-        sortArray(socios);
+        socios = sortArray(socios);
 
         // ? Imprimimos el contenido del Array
         System.out.println("\n---------------------\n\n" + PerArrays.printArray(socios));
