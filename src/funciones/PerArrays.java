@@ -1917,5 +1917,25 @@ public class PerArrays {
             pos = -1;
         } return pos;
     }
+
+    // ! Metodos Globales
+    /**
+     * Método que crea una cadena con la información de los objetos
+     * @param a Array para imprimir
+     * @return Cadena con el objeto
+     */
+    public static String printArray(Object[] a) {
+        String s = "";
+        final int LIMIT = a.length - 1;
+        
+        for (int pos = 0; pos < a.length; pos++) {
+            s += (pos + 1) + ":\n";
+            s += a[pos].toString();
+
+            if (pos != (LIMIT)) {
+                s += "\n\n";
+            }
+        } return s;
+    }
 }
     
