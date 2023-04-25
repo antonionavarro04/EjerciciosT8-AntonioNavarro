@@ -9,24 +9,17 @@ public class Socio implements Comparable {
     /**
      * Id del Socio
      */
-    public int id;
+    protected int id;
 
     /**
      * Nombre del Socio
      */
-    public String nombre;
+    protected String nombre;
 
     /**
      * Edad del Socio
      */
-    public int edad;
-    
-    /**
-     * Constructor por Defecto
-     */
-    public Socio () {
-        // // Constructor por Defecto
-    }
+    protected int edad;
 
     /**
      * Constructor con parámetros

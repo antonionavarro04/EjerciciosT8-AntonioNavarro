@@ -9,22 +9,22 @@ public class Futbolista implements Comparable {
     /**
      * Numero de la camista del Futbolista
      */
-    public int numeroCamiseta;
+    private int numeroCamiseta;
 
     /**
      * Nombre del Futbolista
      */
-    public String nombre;
+    private String nombre;
 
     /**
      * Edad del Futbolista
      */
-    public int edad;
+    private int edad;
 
     /**
      * Número de Goles Marcados
      */
-    public int goles;
+    private int goles;
 
     /**
      * Constructor con Parámetros
