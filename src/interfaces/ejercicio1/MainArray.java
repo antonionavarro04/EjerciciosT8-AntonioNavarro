@@ -1,8 +1,8 @@
 package interfaces.ejercicio1;
 
+// ? Imports
 import java.util.Arrays;
 
-// ? Imports
 import funciones.Mathematics;
 import funciones.PerArrays;
 
@@ -27,11 +27,11 @@ public class MainArray {
     public static void main(String[] args) {
         // ^ Definimos un array de tipo Socio
         Socio socios[] = {
-            new Socio(Mathematics.rng(100, 0), "Pepe", Mathematics.rng(110, 0)),
-            new Socio(Mathematics.rng(100, 0), "Antonio", Mathematics.rng(110, 0)),
-            new Socio(Mathematics.rng(100, 0), "Juan", Mathematics.rng(110, 0)),
-            new Socio(Mathematics.rng(100, 0), "Pedro", Mathematics.rng(110, 0)),
-            new Socio(Mathematics.rng(100, 0), "Anael", Mathematics.rng(110, 0))
+            new Socio(Mathematics.rng(100, 18), "Pepe", Mathematics.rng(110, 0)),
+            new Socio(Mathematics.rng(100, 18), "Antonio", Mathematics.rng(110, 0)),
+            new Socio(Mathematics.rng(100, 18), "Juan", Mathematics.rng(110, 0)),
+            new Socio(Mathematics.rng(100, 18), "Pedro", Mathematics.rng(110, 0)),
+            new Socio(Mathematics.rng(100, 18), "Anael", Mathematics.rng(110, 0))
         };
 
         // ? Imprimimos el contenido del Array
