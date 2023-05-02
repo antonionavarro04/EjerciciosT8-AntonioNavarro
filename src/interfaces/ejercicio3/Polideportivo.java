@@ -56,8 +56,8 @@ public class Polideportivo implements Edificio, InstalacionDeportiva {
     public String toString() {
         return
         "Nombre: \"" + this.nombre + "\""
-        + ",\nSuperficie: " + this.superficie
-        + ",\nTipo: " + this.tipo
+        + ",\nSuperficie: " + this.getSuperficieEdificio()
+        + ",\nTipo: " + this.getTipoInstalacion()
         ;
     }
 }

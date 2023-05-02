@@ -50,7 +50,7 @@ public class EdificioOficinas implements Edificio {
     @ Override
     public String toString() {
         return
-        "Superficie: " + this.superficie
+        "Superficie: " + this.getSuperficieEdificio()
         + ",\nNúmero de Oficinas: " + this.numeroOficinas
         ;
     }
